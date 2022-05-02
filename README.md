@@ -16,12 +16,17 @@ Gerenciador de Prosseguimento
 
 <br />
 
-**3. Desenvolvimento**
+**3. Requisitos para Desenvolvimento**
 
-- Slides de Fundamentos de Sistemas
-- Elucidação dos requisitos do sistema
-- Processos de Engenharia de Requisitos
-- Linguagem Python
-- Biblioteca Tkinter
-- Conexão com Banco de Dados SQL
-- Executavel com CxFreeze
+- Conter 3 telas
+- Tela inicial / boas vindas
+- Tela das Categorias
+- incluir e excluir categorias
+- escreve o nome, e clica em incluir
+- 
+- exibir categorias
+- ao clicar em alguma categoria vai para a terceira tela específica daquela categoria
+- Terceira de Cada Categoria
+- exibe todas as obras cadastradas
+- inclui, exclui, altera obras
+- 
