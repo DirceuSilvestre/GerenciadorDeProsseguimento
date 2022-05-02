@@ -6,7 +6,7 @@ Gerenciador de Prosseguimento
 
 **1. Tipo**
 
-- Sistema de Processamento de Transação
+- Sistema de Processamento de Transação (SPT - nível operacional)
 
 <br />
 
