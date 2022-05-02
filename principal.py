@@ -1,5 +1,4 @@
 from tkinter import *
-import os
 
 
 if __name__ == '__main__':
@@ -9,7 +8,7 @@ if __name__ == '__main__':
     janela.geometry("500x600")
 
     # Importar imagens #
-    imagem_inicial = PhotoImage(file="imagens\\TelaInicial.png")
+    imagem_inicial = PhotoImage(file="\\imagens\\TelaInicial.png")
 
     # Labels #
     lab_inicial = Label(janela, image=imagem_inicial)
