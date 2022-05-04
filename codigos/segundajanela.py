@@ -27,7 +27,6 @@ def janela2():
     #
 
     # Arquivos #
-    lista_categorias = []
 
     # se nao tiver arquivo cria um novo, se tiver faz a leitura
     arquivo_categorias = open("categorias.txt", "a")
@@ -54,10 +53,18 @@ def janela2():
         arquivo_categorias.close()
     
     
-
     # Funções dos Botões #
     def incluir_categoria():
-        lista_categorias.append()
+        arquivo_categorias = open("categorias.txt", "a")
+        arquivo_categorias.write(str(nome_categoria.get()) + ' \n')
+        arquivo_categorias.close()
+        arquivo_categorias = open("categorias.txt", "r")
+        arquivo_lido = arquivo_categorias.readlines()
+        lista_exibir = Listbox(janela2, font=('Comic Sans', 20))
+        for item in arquivo_lido:
+            lista_exibir.insert(END, item)
+        lista_exibir.place(height= 200, x = 100, y = 150)
+        arquivo_categorias.close()
 
     def excluir_categoria():
         lista_categorias.remove()
@@ -81,9 +88,7 @@ def janela2():
     botao_entrar.place(x=230, y=520)
 
     # Escrita #
-    entrada_categoria = StringVar()
-    
-    nome_categoria = Entry(janela2, bd=2, font=("Calibri", 15), justify=CENTER, textvariable=entrada_categoria)
+    nome_categoria = Entry(janela2, bd=2, font=("Calibri", 15), justify=CENTER)
     
     nome_categoria.place(width=300, height=40, x=100, y=460)
 
