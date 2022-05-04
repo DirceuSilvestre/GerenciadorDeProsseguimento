@@ -1,6 +1,5 @@
-from re import T
 from tkinter import *
-from tkinter import font
+
 
 def janela2():
     janela2 = Tk()
