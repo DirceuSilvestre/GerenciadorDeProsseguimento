@@ -10,6 +10,8 @@ def janela2():
     lab_secundaria = Label(janela2, text="Categoria", font=('Times New Roman', 40))
     lab_secundaria.pack(side='top')
 
+    lista_exibir = ()
+
     #---------------- Função ------------------#
     #
     #   conectar no sql, verificar se há tabelas
@@ -55,18 +57,28 @@ def janela2():
     # Funções dos Botões #
     def incluir_categoria():
         arquivo_categorias = open("categorias.txt", "a")
-        arquivo_categorias.write(str(nome_categoria.get()) + ' \n')
+        nome = str(nome_categoria.get())
+        if nome[-3:-1] != ' \n':
+            nome = str(nome) + ' \n'
         arquivo_categorias.close()
         arquivo_categorias = open("categorias.txt", "r")
         arquivo_lido = arquivo_categorias.readlines()
+        arquivo_categorias.close()
+        arquivo_categorias = open("categorias.txt", "w")
         lista_exibir = Listbox(janela2, font=('Comic Sans', 20))
-        for item in arquivo_lido:
-            lista_exibir.insert(END, item)
+        if nome in arquivo_lido:
+            arquivo_categorias.close()
+        else:
+            arquivo_categorias.write(nome)
+            for item in arquivo_lido:
+                lista_exibir.insert(END, item)
         lista_exibir.place(height= 200, x = 100, y = 150)
         arquivo_categorias.close()
 
     def excluir_categoria():
-        categoria = (str(nome_categoria.get()) + ' \n')
+        categoria = str(nome_categoria.get())
+        if categoria[-3:-1] != ' \n':
+            categoria = str(categoria) + ' \n'
         arquivo_categorias = open("categorias.txt", "r")
         arquivo_lido = arquivo_categorias.readlines()
         arquivo_categorias.close()
@@ -81,7 +93,9 @@ def janela2():
         arquivo_categorias.close()
 
     def entrar_categoria():
-        categoria = (str(nome_categoria.get()) + ' \n')
+        categoria = str(nome_categoria.get())
+        if categoria[-3:-1] != ' \n':
+            categoria = str(categoria) + ' \n'
         arquivo_categorias = open("categorias.txt", "r")
         arquivo_lido = arquivo_categorias.readlines()
         arquivo_categorias.close()
@@ -89,9 +103,17 @@ def janela2():
             categoria = (str(categoria[0:-2]) + '.txt')
             arquivo_categorias = open(categoria, 'a')
             arquivo_categorias.close()
-            janela3()
+            janela3(categoria)
         
-
+    def pegar_categoria():
+        lista_exibir = Listbox(janela2, font=('Comic Sans', 20))
+        arquivo_categorias = open("categorias.txt", "r")
+        arquivo_lido = arquivo_categorias.readlines()
+        arquivo_categorias.close()
+        for item in arquivo_lido:
+            lista_exibir.insert(END, item)
+        lista_exibir.place(height= 200, x = 100, y = 150)
+        nome_categoria.insert(0, str(lista_exibir.get(ACTIVE)))
 
 
     # Botões #
@@ -107,6 +129,10 @@ def janela2():
     #botão entrar
     botao_entrar = Button(janela2, text='ENTRAR', command=entrar_categoria)
     botao_entrar.place(x=230, y=520)
+
+    #botão pegar
+    botao_pegar = Button(janela2, text='PEGAR', command=pegar_categoria)
+    botao_pegar.place(x=230, y=415)
 
     # Escrita #
     nome_categoria = Entry(janela2, bd=2, font=("Calibri", 15), justify=CENTER)
