@@ -57,28 +57,23 @@ def janela2():
     # Funções dos Botões #
     def incluir_categoria():
         arquivo_categorias = open("categorias.txt", "a")
-        nome = str(nome_categoria.get())
-        if nome[-3:-1] != ' \n':
-            nome = str(nome) + ' \n'
         arquivo_categorias.close()
+        arquivo_categorias = open("categorias.txt", "a")
+        arquivo_categorias.write(str(nome_categoria.get() + ' \n'))
+        arquivo_categorias.close()
+        lista_exibir = Listbox(janela2, font=('Comic Sans', 20))
         arquivo_categorias = open("categorias.txt", "r")
         arquivo_lido = arquivo_categorias.readlines()
-        arquivo_categorias.close()
-        arquivo_categorias = open("categorias.txt", "w")
-        lista_exibir = Listbox(janela2, font=('Comic Sans', 20))
-        if nome in arquivo_lido:
-            arquivo_categorias.close()
-        else:
-            arquivo_categorias.write(nome)
-            for item in arquivo_lido:
-                lista_exibir.insert(END, item)
+        for item in arquivo_lido:
+            lista_exibir.insert(END, item)
         lista_exibir.place(height= 200, x = 100, y = 150)
         arquivo_categorias.close()
+        
+        
+        
 
     def excluir_categoria():
-        categoria = str(nome_categoria.get())
-        if categoria[-3:-1] != ' \n':
-            categoria = str(categoria) + ' \n'
+        categoria = str(nome_categoria.get() + ' \n')
         arquivo_categorias = open("categorias.txt", "r")
         arquivo_lido = arquivo_categorias.readlines()
         arquivo_categorias.close()
@@ -93,9 +88,7 @@ def janela2():
         arquivo_categorias.close()
 
     def entrar_categoria():
-        categoria = str(nome_categoria.get())
-        if categoria[-3:-1] != ' \n':
-            categoria = str(categoria) + ' \n'
+        categoria = str(nome_categoria.get() + ' \n')
         arquivo_categorias = open("categorias.txt", "r")
         arquivo_lido = arquivo_categorias.readlines()
         arquivo_categorias.close()
@@ -106,14 +99,9 @@ def janela2():
             janela3(categoria)
         
     def pegar_categoria():
-        lista_exibir = Listbox(janela2, font=('Comic Sans', 20))
-        arquivo_categorias = open("categorias.txt", "r")
-        arquivo_lido = arquivo_categorias.readlines()
-        arquivo_categorias.close()
-        for item in arquivo_lido:
-            lista_exibir.insert(END, item)
-        lista_exibir.place(height= 200, x = 100, y = 150)
-        nome_categoria.insert(0, str(lista_exibir.get(ACTIVE)))
+        nome = lista_exibir.get(ACTIVE)
+        nome_categoria.insert(0, nome[0:-2])
+        
 
 
     # Botões #
