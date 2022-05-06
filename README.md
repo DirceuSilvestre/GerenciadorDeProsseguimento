@@ -32,3 +32,13 @@ Gerenciador de Prosseguimento
 - py setup.py build
 
 Ou extrair o zip de nome pronto, e clicar em principal.exe
+
+**5. Contribuições e Melhorias**
+
+- Design:
+      na pasta imagens vai encontrar o esboço que fiz de como gostaria que fosse o visual do programa
+- Conexão:
+      conectar com banco de dados relacional ao invés do atual uso de arquivos txt
+- Bugs:
+      melhorar o codigo para o ponteiro do metodo get da listbox apontar corretamente todas vezes e o botão pegar não nos deixar na mão
+
