@@ -16,17 +16,19 @@ Gerenciador de Prosseguimento
 
 <br />
 
-**3. Requisitos para Desenvolvimento**
+**3. Utilizado para desenvolvimento**
 
-- Conter 3 telas
-- Tela inicial / boas vindas
-- Tela das Categorias
-- incluir e excluir categorias
-- escreve o nome, e clica em incluir
-- 
-- exibir categorias
-- ao clicar em alguma categoria vai para a terceira tela específica daquela categoria
-- Terceira de Cada Categoria
-- exibe todas as obras cadastradas
-- inclui, exclui, altera obras
-- 
+- Slides de Fundamentos de Sistemas
+- Paradigma Estruturado
+- Linguagem Python
+- Biblioteca Tkinter
+
+**4. Para rodar o código**
+
+- Download do repositório
+- py principal.py
+
+- Para criar o executavel
+- py setup.py build
+
+Ou extrair o zip de nome pronto, e clicar em principal.exe
