@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from tkinter import *
 from terceirajanela import janela3
 

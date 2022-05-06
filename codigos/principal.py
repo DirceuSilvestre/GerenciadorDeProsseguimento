@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter.font import BOLD
 from segundajanela import janela2
 import time
 
@@ -13,15 +14,14 @@ janela = Tk()
 janela.title("Gerenciador de Prosseguimento")
 janela.geometry("500x600")
 
-# Importar Imagens #
-imagem_inicial = PhotoImage(file="imagens\\TelaInicial.png")
-imagem_entrar = PhotoImage(file="imagens\\Entrar.png")
-
 # Labels #
-lab_inicial = Label(janela, image=imagem_inicial)
-lab_inicial.pack()
+lab_inicial = Label(janela, text="Gerenciador de Prosseguimento", font=('Times New Roman', 27, BOLD))
+lab_inicial.pack(side='top')
 
-botao_entrar = Button(janela, bd=0, image=imagem_entrar, command=segunda_janela)
-botao_entrar.place(width=187, height=56, x=157, y=522)
+texto = Label(janela, text="""Sistema feito para gerenciar seu estudo \n e entretenimento. \n Salve onde parou e consulte depois. \n Inclua, exclua ou altere qualquer obra. \n Gerencie as obras por suas respectivas categorias, \n como Serie, Aula, Livro, Quadrinho, e etc. \n Aproveite!""", font=('Comic Sans',16))
+texto.place(x=00, y=165)
+
+botao_entrar = Button(janela, text='ENTRAR', font=80, command=segunda_janela)
+botao_entrar.place(width=130, height=60, x=185, y=500)
 
 janela.mainloop()
