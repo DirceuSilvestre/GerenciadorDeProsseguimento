@@ -24,6 +24,7 @@ Gerenciador de Prosseguimento
 - Biblioteca Tkinter
 
 <br />
+
 **4. Para rodar o código**
 
 - Download do repositório
@@ -33,6 +34,7 @@ Gerenciador de Prosseguimento
 - py setup.py build
 
 Ou extrair o zip de nome pronto, e clicar em principal.exe
+
 <br />
 
 **5. Contribuições e Melhorias**
